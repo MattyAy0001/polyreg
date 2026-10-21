@@ -5,8 +5,7 @@ def Vandermonde(x,m,n):
     V = np.ones((m,n+1)) # initialises the matrix
     for i in range(m):
         for j in range(1,n+1): # indexing starts from 1 as first column of V is already x^0=1
-            V[i, j] = x[i] ** j
-            print(V[i,j])
+            V[i, j] = x[i] ** j # v(i,j) = (x[i])^j
     return V
 
 def optimal_coeff(V,y):
