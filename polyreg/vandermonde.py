@@ -13,9 +13,9 @@ def optimal_coeff(V,y):
     "Gets the optimal vector of coefficients according to a mean squared error loss function"
     return np.linalg.solve(V.T @ V, V.T @ y) # solves based on the normal equations
 
-def predictions(x, y, beta, n):
+def predictions(V, beta):
     "Returns the preditions based on the optimal vector of coefficients beta"
-    y_pred = Vandermonde(x, len(x), n) @ beta   # predictions are V @ beta
+    y_pred = V @ beta   # predictions are V @ beta
     return y_pred
 
 def avg_loss(y, y_pred):
