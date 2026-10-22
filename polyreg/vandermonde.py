@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 def Vandermonde(x,m,n):
     "Gets the m by n+1 Vandermonde matrix for polynomial regression"
@@ -9,6 +10,10 @@ def Vandermonde(x,m,n):
     return V
 
 def optimal_coeff(V,y):
-    "Gets the optimal matrix of coefficients according to a mean squared error loss function"
+    "Gets the optimal vector of coefficients according to a mean squared error loss function"
     return np.linalg.solve(V.T @ V, V.T @ y) # solves based on the normal equations
 
+def predictions(x, y, beta, n):
+    "Returns the preditions based on the optimal vector of coefficients beta"
+    y_pred = Vandermonde(x, len(x), n) @ beta   # predictions are V @ beta
+    return y_pred
