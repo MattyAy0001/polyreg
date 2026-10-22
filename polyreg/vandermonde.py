@@ -17,3 +17,11 @@ def predictions(x, y, beta, n):
     "Returns the preditions based on the optimal vector of coefficients beta"
     y_pred = Vandermonde(x, len(x), n) @ beta   # predictions are V @ beta
     return y_pred
+
+def avg_loss(y, y_pred):
+    "returns the average loss based on the mean squared error loss function"
+    total_loss = 0    # initialise the loss
+    for i in range(len(y)): # get the total loss
+        total_loss += (y[i] - y_pred[i])**2
+    total_loss = total_loss/len(y)  # divide by length to get the average
+    return total_loss
