@@ -1,7 +1,5 @@
 # PolyReg
 
-A basic python implementation of polynomial regression based on the mean squared error loss function for fitting relationships between given input data and a given target variable.
-
 A small Python package for performing polynomial regression on given data using the mean squared error loss function
 
 ## Overview
